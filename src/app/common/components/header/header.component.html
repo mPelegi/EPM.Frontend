@@ -1,0 +1,14 @@
+<mat-toolbar class="header mat-elevation-z4 default-grey">
+    <i class="material-icons white">monitor</i>
+    <div class="title-group">
+        <a class="white">EPM - Essential Performance Monitor</a>
+        
+        
+            <mat-list>
+                <mat-list-item> {{ this.hubconnectionService.description.operatingSystem.csName }} ({{ this.hubconnectionService.description.operatingSystem.registeredUser }})</mat-list-item>
+                <mat-list-item> {{ this.hubconnectionService.description.operatingSystem.name }} </mat-list-item>
+                <mat-list-item> MotherBoard: {{ this.hubconnectionService.description.motherBoard.name }} </mat-list-item>
+                <mat-list-item> Manufacturer: {{ this.hubconnectionService.description.motherBoard.manufacturer }} </mat-list-item>
+            </mat-list>           
+    </div>
+</mat-toolbar>

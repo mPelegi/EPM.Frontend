@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    padding-top: 10px;
+}
+
+.header a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 17px;
+}
+
+.header .logo {
+    max-height: 32px;
+}
+
+.header .title-group {
+    padding-left: 25px;
+}
+
+.header .title-group i {
+    padding-right: 25px;
+}
+
+.material-icons {
+    font-size: 64px;
+    align-items: bottom;
+    padding-left: 25px;
+}
+
+.mat-list {
+    columns: 2;
+}
+
+.mat-list-item {
+    color: #eee;
+    max-height: 30px;
+}

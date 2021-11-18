@@ -1,0 +1,73 @@
+<epm-header></epm-header>
+<div class="container-fluid d-flex flex-column h-100"></div>
+
+<div class="card-performance-wrapper">
+  <div class="card-performance mat-elevation-z8">
+    <div class="card-performance-header">
+      <h3 class="card-performance-titulo">CPU</h3>
+      <div mat-line><i>{{ this.hubconnectionService.description.cpu.name }} - {{ this.hubconnectionService.description.cpu.numberOfPhysicalCores }}/{{ this.hubconnectionService.description.cpu.numberOfLogicalCores }}</i></div>
+      <div mat-line></div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-list class="card-performance-conteudo">
+      <div mat-line>Base Clock: {{ this.hubconnectionService.performance.cpu.maxClockSpeedGHz }}GHz</div>
+      <div mat-line>Actual Clock Speed: {{ this.hubconnectionService.performance.cpu.actualClockSpeedGHz | number:'1.0-2' }}GHz</div>
+      <div mat-line>Load Percentage: {{ this.hubconnectionService.performance.cpu.loadPercentage }}%</div>
+    </mat-list>
+  </div>
+</div>
+
+<div class="card-performance-wrapper">
+  <div class="card-performance mat-elevation-z8">
+    <div class="card-performance-header">
+      <h3 class="card-performance-titulo">GPU</h3>
+      <div mat-line><i>{{ this.hubconnectionService.description.gpu.name }}</i></div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-list class="card-performance-conteudo">
+      <div mat-line>Dedicated Memory: {{ this.hubconnectionService.description.gpu.dedicatedMemoryGB }}GB</div>
+      <div mat-line>Load Percentage: {{ this.hubconnectionService.performance.gpu.loadPercentage }}%</div>
+    </mat-list>
+  </div>
+</div>
+
+<div class="card-performance-wrapper">
+  <div class="card-performance mat-elevation-z8">
+    <div class="card-performance-header">
+      <h3 class="card-performance-titulo">RAMs</h3>
+      <div *ngFor="let ram of this.hubconnectionService.description.rams" mat-line><i>{{ ram.manufacturer }} {{ ram.capacity }} {{ ram.clockSpeed }}MHz - {{ ram.partNumber }}</i></div>
+      <div mat-line></div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-list class="card-performance-conteudo">
+      <div mat-line>Total Memory: {{ this.hubconnectionService.performance.ram.totalMemoryMB }}MB</div>
+      <div mat-line>Free Memory: {{ this.hubconnectionService.performance.ram.freeMemoryMB }}MB</div>
+    </mat-list>
+  </div>
+</div>
+
+<div class="card-performance-wrapper">
+  <div class="card-performance mat-elevation-z8">
+    <div class="card-performance-header">
+      <h3 class="card-performance-titulo">Drives</h3>
+      <div *ngFor="let drive of this.hubconnectionService.description.drives" mat-line><i>{{ drive.logicalDisk }} {{ drive.model }}</i></div>
+      <div mat-line></div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-list *ngFor="let drive of this.hubconnectionService.performance.drives" class="card-performance-conteudo">
+      <div mat-line>Logical Disk: {{ drive.logicalDisk }}</div>
+      <div mat-line>Total Size: {{ drive.totalSizeGB }}GB</div>
+      <div mat-line>Available Size: {{ drive.availableSizeGB }}GB</div>
+    </mat-list>
+  </div>
+</div>
+<epm-footer></epm-footer>
+
